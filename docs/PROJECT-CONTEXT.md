@@ -4,7 +4,7 @@ Read this file before making architectural, content, deployment or product decis
 
 ## What this project is
 
-Tryengl is an interactive English-learning site focused on FCE preparation. The current lesson teaches paraphrasing, passive voice and Reading and Use of English practice.
+Tryengl is an interactive English-learning site for Cambridge B2 First (FCE) and C1 Advanced (CAE) preparation. The home page is a learner-facing hub that links to individual, self-contained lessons.
 
 ## Live links
 
@@ -14,7 +14,10 @@ Tryengl is an interactive English-learning site focused on FCE preparation. The 
 
 ## Current implementation
 
-- The site is a static interactive worksheet.
+- The site is a static interactive lesson library.
+- The home page (`/`) is the lesson hub.
+- The preserved FCE grammar lesson is at `/lessons/fce-passive-voice/`.
+- The CAE multi-skills lesson is at `/lessons/cae-exam-skills/`.
 - Exercises include at least ten items where applicable.
 - Passive-voice activities are clickable and give feedback.
 - Incorrect answers can offer grammar or vocabulary explanations.
@@ -25,7 +28,7 @@ Tryengl is an interactive English-learning site focused on FCE preparation. The 
 
 - The learner experience should become focused and minimalist: one goal, activity and decision at a time rather than a long page of text.
 - Future lessons should support modes or stages such as Intro, Discover, Build, Practice, FCE Challenge and Review.
-- A learner-facing lesson catalogue will live at `/library`.
+- The learner-facing lesson catalogue currently lives at `/`; it may later become a richer library without moving existing lesson URLs.
 - A developer-only component and lesson workspace will live at `/dev` and must not be in normal learner navigation.
 - New lesson content should eventually be separate structured data, not copied HTML pages.
 
