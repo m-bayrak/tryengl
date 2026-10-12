@@ -18,7 +18,10 @@ Before redesigning the learner experience, create a structure that supports many
 
 - Learners should see a focused, minimalist flow: one goal, one activity and one decision at a time.
 - A lesson should progress through: Intro, Discover, Build, Practice, FCE Challenge and Review.
-- `/library` is the catalogue visible to learners and teachers: modules, lessons, status and progress.
+- The root page (`/`) is the entry point and should show only the two exam pathways: FCE / B2 First and CAE / C1 Advanced.
+- Each pathway will have its own catalogue (`/fce/` and `/cae/`) when the lesson library grows. These catalogue pages will organise approximately 40 lessons by skill: Grammar, Use of English, Reading, Listening, Speaking and Writing.
+- Catalogue cards should show a lesson number, brief goal, estimated time, task types and learner status (`New`, `In progress`, `Completed`) instead of presenting one long list.
+- Individual lessons keep stable, descriptive routes under `/lessons/`, for example `/lessons/cae-writing-essay/`. A catalogue is navigation; a lesson URL is the actual learning page.
 - `/dev` is not part of the normal learner navigation. It is the internal development area for building and testing components.
 - Keep feedback short at first, with optional deeper grammar and vocabulary explanations.
 
@@ -34,6 +37,18 @@ src/
   styles/       shared design system
 legacy/         complete worksheet reference
 docs/           project documentation
+```
+
+## Lesson-library navigation model
+
+```text
+/                         exam-pathway entry page
+├── /fce/                 FCE catalogue, filters and learning route
+├── /cae/                 CAE catalogue, filters and learning route
+└── /lessons/
+    ├── fce-passive-voice/
+    ├── cae-exam-skills/
+    └── cae-writing-essay/
 ```
 
 ## Development workflow
